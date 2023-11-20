@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "softwares",
+  "info": {
+    "singularName": "software",
+    "pluralName": "softwares",
+    "displayName": "Software’s"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxLength": 50
+    },
+    "icon": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "my_skills",
+  "info": {
+    "singularName": "my-skill",
+    "pluralName": "my-skills",
+    "displayName": "My Skills"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "skill_type": {
+      "type": "string",
+      "required": true
+    },
+    "skill_icon": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
+    },
+    "skill_category": {
+      "type": "enumeration",
+      "enum": [
+        "Web Design & Development",
+        "Digital Marketing",
+        "Business",
+        "Trading & Investing"
+      ],
+      "required": true
+    }
+  }
+}
