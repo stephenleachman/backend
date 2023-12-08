@@ -25,7 +25,7 @@
       ],
       "required": true
     },
-    "project_cover_image": {
+    "projectCover": {
       "type": "media",
       "multiple": true,
       "required": true,
@@ -44,6 +44,46 @@
     "Featured": {
       "type": "boolean",
       "required": true
+    },
+    "technologies": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::technology.technology"
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "Overview": {
+      "type": "string",
+      "required": true
+    },
+    "projects_github_url": {
+      "type": "string"
+    },
+    "clients_name": {
+      "type": "string",
+      "required": true
+    },
+    "avatar": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "background_color": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "project_name",
+      "required": false
     }
   }
 }

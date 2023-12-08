@@ -4,7 +4,8 @@
   "info": {
     "singularName": "about-me",
     "pluralName": "about-me-all",
-    "displayName": "About Me"
+    "displayName": "About Me",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true

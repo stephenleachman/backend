@@ -17,22 +17,19 @@
     },
     "skill_icon": {
       "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
+        "images"
       ],
       "type": "media",
-      "multiple": true,
+      "multiple": false,
       "required": true
     },
     "skill_category": {
       "type": "enumeration",
       "enum": [
-        "Web Design & Development",
-        "Digital Marketing",
+        "Trading & Investing",
         "Business",
-        "Trading & Investing"
+        "Digital Marketing",
+        "Web Design & Development"
       ],
       "required": true
     }

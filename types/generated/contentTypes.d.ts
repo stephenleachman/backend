@@ -683,6 +683,7 @@ export interface ApiAboutMeAboutMe extends Schema.CollectionType {
     singularName: 'about-me';
     pluralName: 'about-me-all';
     displayName: 'About Me';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -750,10 +751,10 @@ export interface ApiMySkillMySkill extends Schema.CollectionType {
     skill_icon: Attribute.Media & Attribute.Required;
     skill_category: Attribute.Enumeration<
       [
-        'Web Design & Development',
-        'Digital Marketing',
+        'Trading & Investing',
         'Business',
-        'Trading & Investing'
+        'Digital Marketing',
+        'Web Design & Development'
       ]
     > &
       Attribute.Required;
@@ -794,10 +795,22 @@ export interface ApiProjectProject extends Schema.CollectionType {
       }>;
     project_type: Attribute.Enumeration<['personal', 'client']> &
       Attribute.Required;
-    project_cover_image: Attribute.Media & Attribute.Required;
+    projectCover: Attribute.Media & Attribute.Required;
     project_date: Attribute.Date & Attribute.Required;
     project_live_url: Attribute.String & Attribute.Required;
     Featured: Attribute.Boolean & Attribute.Required;
+    technologies: Attribute.Relation<
+      'api::project.project',
+      'oneToMany',
+      'api::technology.technology'
+    >;
+    description: Attribute.RichText & Attribute.Required;
+    Overview: Attribute.String & Attribute.Required;
+    projects_github_url: Attribute.String;
+    clients_name: Attribute.String & Attribute.Required;
+    avatar: Attribute.Media;
+    background_color: Attribute.String & Attribute.Required;
+    slug: Attribute.UID<'api::project.project', 'project_name'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -857,6 +870,7 @@ export interface ApiTechnologyTechnology extends Schema.CollectionType {
     singularName: 'technology';
     pluralName: 'technologies';
     displayName: 'Technologies';
+    description: '';
   };
   options: {
     draftAndPublish: true;
