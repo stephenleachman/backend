@@ -4,7 +4,8 @@
   "info": {
     "singularName": "blog",
     "pluralName": "blogs",
-    "displayName": "Blog"
+    "displayName": "Blog",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -13,6 +14,40 @@
   "attributes": {
     "title": {
       "type": "string",
+      "required": true
+    },
+    "featured": {
+      "type": "boolean",
+      "required": true
+    },
+    "artical": {
+      "type": "richtext",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "required": true,
+      "targetField": "title"
+    },
+    "clover_image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "published": {
+      "required": true,
+      "type": "date"
+    },
+    "blog_categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::blog-category.blog-category"
+    },
+    "summery": {
+      "type": "text",
       "required": true
     }
   }
