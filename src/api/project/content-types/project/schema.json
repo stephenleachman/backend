@@ -52,8 +52,8 @@
       "type": "richtext",
       "required": true
     },
-    "overvier": {
-      "type": "string",
+    "overvierw": {
+      "type": "text",
       "required": true
     },
     "project_github_link": {
@@ -65,15 +65,15 @@
       "required": true
     },
     "avatar": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false,
-      "required": true
+      ]
     },
     "slug": {
       "type": "uid",

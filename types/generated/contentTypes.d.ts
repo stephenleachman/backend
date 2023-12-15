@@ -847,7 +847,7 @@ export interface ApiProjectProject extends Schema.CollectionType {
       'api::technology.technology'
     >;
     description: Attribute.RichText & Attribute.Required;
-    overvier: Attribute.String & Attribute.Required;
+    overvierw: Attribute.Text & Attribute.Required;
     project_github_link: Attribute.String & Attribute.Required;
     client_name: Attribute.String & Attribute.Required;
     avatar: Attribute.Media & Attribute.Required;
