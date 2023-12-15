@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "projects",
+  "collectionName": "portfolio",
   "info": {
     "singularName": "project",
-    "pluralName": "projects",
-    "displayName": "Projects"
+    "pluralName": "portfolio",
+    "displayName": "portfolio"
   },
   "options": {
     "draftAndPublish": true
@@ -20,61 +20,14 @@
       "enum": [
         "Personal Project",
         "Client Project"
-      ],
-      "required": true
+      ]
     },
-    "projectCover": {
+    "project_cover": {
       "allowedTypes": [
         "images"
       ],
       "type": "media",
       "multiple": true,
-      "required": true
-    },
-    "project_date": {
-      "required": true,
-      "type": "date"
-    },
-    "project_live_url": {
-      "type": "string",
-      "required": true
-    },
-    "featured": {
-      "type": "boolean",
-      "required": true
-    },
-    "technologies": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::technology.technology"
-    },
-    "description": {
-      "type": "richtext",
-      "required": true
-    },
-    "Overview": {
-      "type": "string",
-      "required": true
-    },
-    "project_github_url": {
-      "type": "string",
-      "required": true
-    },
-    "client_name": {
-      "type": "string",
-      "required": true
-    },
-    "avatar": {
-      "allowedTypes": [
-        "images"
-      ],
-      "type": "media",
-      "multiple": false,
-      "required": true
-    },
-    "slug": {
-      "type": "uid",
-      "targetField": "project_name",
       "required": true
     }
   }
