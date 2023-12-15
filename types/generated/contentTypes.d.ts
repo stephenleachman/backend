@@ -829,23 +829,20 @@ export interface ApiProjectProject extends Schema.CollectionType {
     singularName: 'project';
     pluralName: 'projects';
     displayName: 'Projects';
-    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    project_name: Attribute.String &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
-        maxLength: 120;
-      }>;
-    project_type: Attribute.Enumeration<['personal', 'client']> &
+    project_name: Attribute.String & Attribute.Required;
+    project_type: Attribute.Enumeration<
+      ['Personal Project', 'Client Project']
+    > &
       Attribute.Required;
     projectCover: Attribute.Media & Attribute.Required;
     project_date: Attribute.Date & Attribute.Required;
     project_live_url: Attribute.String & Attribute.Required;
-    Featured: Attribute.Boolean & Attribute.Required;
+    featured: Attribute.Boolean & Attribute.Required;
     technologies: Attribute.Relation<
       'api::project.project',
       'oneToMany',
@@ -853,11 +850,11 @@ export interface ApiProjectProject extends Schema.CollectionType {
     >;
     description: Attribute.RichText & Attribute.Required;
     Overview: Attribute.String & Attribute.Required;
-    projects_github_url: Attribute.String;
-    clients_name: Attribute.String & Attribute.Required;
-    avatar: Attribute.Media;
-    background_color: Attribute.String & Attribute.Required;
-    slug: Attribute.UID<'api::project.project', 'project_name'>;
+    project_github_url: Attribute.String & Attribute.Required;
+    client_name: Attribute.String & Attribute.Required;
+    avatar: Attribute.Media & Attribute.Required;
+    slug: Attribute.UID<'api::project.project', 'project_name'> &
+      Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

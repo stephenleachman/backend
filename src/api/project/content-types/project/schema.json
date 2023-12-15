@@ -4,8 +4,7 @@
   "info": {
     "singularName": "project",
     "pluralName": "projects",
-    "displayName": "Projects",
-    "description": ""
+    "displayName": "Projects"
   },
   "options": {
     "draftAndPublish": true
@@ -14,24 +13,23 @@
   "attributes": {
     "project_name": {
       "type": "string",
-      "required": true,
-      "maxLength": 120
+      "required": true
     },
     "project_type": {
       "type": "enumeration",
       "enum": [
-        "personal",
-        "client"
+        "Personal Project",
+        "Client Project"
       ],
       "required": true
     },
     "projectCover": {
-      "type": "media",
-      "multiple": true,
-      "required": true,
       "allowedTypes": [
         "images"
-      ]
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
     },
     "project_date": {
       "required": true,
@@ -41,7 +39,7 @@
       "type": "string",
       "required": true
     },
-    "Featured": {
+    "featured": {
       "type": "boolean",
       "required": true
     },
@@ -58,32 +56,26 @@
       "type": "string",
       "required": true
     },
-    "projects_github_url": {
-      "type": "string"
+    "project_github_url": {
+      "type": "string",
+      "required": true
     },
-    "clients_name": {
+    "client_name": {
       "type": "string",
       "required": true
     },
     "avatar": {
+      "allowedTypes": [
+        "images"
+      ],
       "type": "media",
       "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
-    "background_color": {
-      "type": "string",
       "required": true
     },
     "slug": {
       "type": "uid",
       "targetField": "project_name",
-      "required": false
+      "required": true
     }
   }
 }
