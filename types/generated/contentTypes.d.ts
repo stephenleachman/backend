@@ -829,6 +829,7 @@ export interface ApiProjectProject extends Schema.CollectionType {
     singularName: 'project';
     pluralName: 'portfolio';
     displayName: 'portfolio';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -837,6 +838,21 @@ export interface ApiProjectProject extends Schema.CollectionType {
     project_name: Attribute.String & Attribute.Required;
     project_type: Attribute.Enumeration<['Personal Project', 'Client Project']>;
     project_cover: Attribute.Media & Attribute.Required;
+    project_data: Attribute.Date & Attribute.Required;
+    project_live_url: Attribute.String & Attribute.Required;
+    featured: Attribute.Boolean & Attribute.Required;
+    technologies: Attribute.Relation<
+      'api::project.project',
+      'oneToMany',
+      'api::technology.technology'
+    >;
+    description: Attribute.RichText & Attribute.Required;
+    overvier: Attribute.String & Attribute.Required;
+    project_github_link: Attribute.String & Attribute.Required;
+    client_name: Attribute.String & Attribute.Required;
+    avatar: Attribute.Media & Attribute.Required;
+    slug: Attribute.UID<'api::project.project', 'project_name'> &
+      Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
