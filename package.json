@@ -16,8 +16,8 @@
     "@strapi/provider-upload-cloudinary": "^4.15.5",
     "@strapi/strapi": "4.15.5",
     "better-sqlite3": "8.6.0",
-    "build": "^0.1.4",
-    "npm": "^10.2.5",
+    "pg": "^8.11.3",
+    "pg-connection-string": "^2.6.2",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "5.3.4",
@@ -30,8 +30,8 @@
     "uuid": "34cad57e-e294-46ce-9fe2-17da71a4b5a4"
   },
   "engines": {
-    "node": "18.0.0",
-    "npm": "6.0.0"
+    "node": ">=18.0.0 <=20.x.x",
+    "npm": ">=6.0.0"
   },
   "license": "MIT"
 }
