@@ -79,6 +79,11 @@
       "type": "uid",
       "targetField": "project_name",
       "required": true
+    },
+    "npm_dependencies": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::npm-dependency.npm-dependency"
     }
   }
 }

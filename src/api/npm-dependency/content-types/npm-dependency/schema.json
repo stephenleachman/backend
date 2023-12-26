@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "npm_dependencies",
+  "info": {
+    "singularName": "npm-dependency",
+    "pluralName": "npm-dependencies",
+    "displayName": "NPM Dependencies"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "UPL": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

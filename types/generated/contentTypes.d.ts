@@ -823,6 +823,37 @@ export interface ApiMySkillMySkill extends Schema.CollectionType {
   };
 }
 
+export interface ApiNpmDependencyNpmDependency extends Schema.CollectionType {
+  collectionName: 'npm_dependencies';
+  info: {
+    singularName: 'npm-dependency';
+    pluralName: 'npm-dependencies';
+    displayName: 'NPM Dependencies';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    UPL: Attribute.String & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::npm-dependency.npm-dependency',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::npm-dependency.npm-dependency',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiProjectProject extends Schema.CollectionType {
   collectionName: 'portfolio';
   info: {
@@ -853,6 +884,11 @@ export interface ApiProjectProject extends Schema.CollectionType {
     avatar: Attribute.Media & Attribute.Required;
     slug: Attribute.UID<'api::project.project', 'project_name'> &
       Attribute.Required;
+    npm_dependencies: Attribute.Relation<
+      'api::project.project',
+      'oneToMany',
+      'api::npm-dependency.npm-dependency'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -962,6 +998,7 @@ declare module '@strapi/types' {
       'api::blog.blog': ApiBlogBlog;
       'api::blog-category.blog-category': ApiBlogCategoryBlogCategory;
       'api::my-skill.my-skill': ApiMySkillMySkill;
+      'api::npm-dependency.npm-dependency': ApiNpmDependencyNpmDependency;
       'api::project.project': ApiProjectProject;
       'api::software.software': ApiSoftwareSoftware;
       'api::technology.technology': ApiTechnologyTechnology;
