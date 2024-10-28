@@ -4,7 +4,8 @@
   "info": {
     "singularName": "npm-dependency",
     "pluralName": "npm-dependencies",
-    "displayName": "NPM Dependencies"
+    "displayName": "NPM Dependencies",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,7 +16,7 @@
       "type": "string",
       "required": true
     },
-    "UPL": {
+    "URL": {
       "type": "string",
       "required": true
     }

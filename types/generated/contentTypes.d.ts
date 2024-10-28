@@ -829,13 +829,14 @@ export interface ApiNpmDependencyNpmDependency extends Schema.CollectionType {
     singularName: 'npm-dependency';
     pluralName: 'npm-dependencies';
     displayName: 'NPM Dependencies';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     name: Attribute.String & Attribute.Required;
-    UPL: Attribute.String & Attribute.Required;
+    URL: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
