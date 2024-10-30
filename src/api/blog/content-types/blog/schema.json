@@ -51,17 +51,23 @@
       "required": true
     },
     "author_avatar": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "author_name": {
       "type": "string",
       "required": true,
       "default": "Stephen Leachman"
+    },
+    "blog_tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::blog-tag.blog-tag",
+      "inversedBy": "blogs"
     }
   }
 }

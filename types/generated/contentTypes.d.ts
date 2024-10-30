@@ -742,6 +742,11 @@ export interface ApiBlogBlog extends Schema.CollectionType {
     author_name: Attribute.String &
       Attribute.Required &
       Attribute.DefaultTo<'Stephen Leachman'>;
+    blog_tags: Attribute.Relation<
+      'api::blog.blog',
+      'manyToMany',
+      'api::blog-tag.blog-tag'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -780,6 +785,41 @@ export interface ApiBlogCategoryBlogCategory extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::blog-category.blog-category',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiBlogTagBlogTag extends Schema.CollectionType {
+  collectionName: 'blog_tags';
+  info: {
+    singularName: 'blog-tag';
+    pluralName: 'blog-tags';
+    displayName: 'Blog Tags';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    tag: Attribute.String & Attribute.Required;
+    blogs: Attribute.Relation<
+      'api::blog-tag.blog-tag',
+      'manyToMany',
+      'api::blog.blog'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::blog-tag.blog-tag',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::blog-tag.blog-tag',
       'oneToOne',
       'admin::user'
     > &
@@ -1002,6 +1042,7 @@ declare module '@strapi/types' {
       'api::about-me.about-me': ApiAboutMeAboutMe;
       'api::blog.blog': ApiBlogBlog;
       'api::blog-category.blog-category': ApiBlogCategoryBlogCategory;
+      'api::blog-tag.blog-tag': ApiBlogTagBlogTag;
       'api::my-skill.my-skill': ApiMySkillMySkill;
       'api::npm-dependency.npm-dependency': ApiNpmDependencyNpmDependency;
       'api::project.project': ApiProjectProject;
