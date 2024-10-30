@@ -49,6 +49,19 @@
     "summery": {
       "type": "text",
       "required": true
+    },
+    "author_avatar": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "author_name": {
+      "type": "string",
+      "required": true,
+      "default": "Stephen Leachman"
     }
   }
 }

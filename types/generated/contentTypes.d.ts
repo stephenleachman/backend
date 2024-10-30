@@ -738,6 +738,10 @@ export interface ApiBlogBlog extends Schema.CollectionType {
       'api::blog-category.blog-category'
     >;
     summery: Attribute.Text & Attribute.Required;
+    author_avatar: Attribute.Media & Attribute.Required;
+    author_name: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Stephen Leachman'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
